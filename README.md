@@ -2,6 +2,8 @@
 
 Elevate your device with this script, transforming it into a captivating digital clock set against the vibrant world of Stone Story RPG. Dive deep into the game's narrative while the current time, artfully rendered in ASCII art digits, seamlessly integrates into the heart of your screen. This Stonescript doesn't just tell time; it enhances your gaming experience by marrying practicality with the spellbinding essence of your journey.
 
+![STONE_CLOCK](https://github.com/ken1th/SSRPG_Clock/assets/87118032/ece351de-a84b-41af-a009-4466e0fdfa1a)
+
 ## Features
 
 - Displays hours and minutes in the center of the game screen using ASCII art.
@@ -13,7 +15,7 @@ Elevate your device with this script, transforming it into a captivating digital
 
 1. Ensure you have Stone Story RPG installed and have access to the Mind Stone for custom scripting.
 2. Open your Mind Stone interface in the game.
-3. Copy the Stonescript code from SSRPG_clock_script in this repository.
+3. Copy the Stonescript code from [SSRPG_clock_script in this repository](https://github.com/ken1th/SSRPG_Clock/blob/main/SSRPG_clock_script).
 4. Paste the code into the Mind Stone script area in the game.
 5. Exit the Mind Stone interface, start a game loop, and enjoy the digital clock UI.
 
