@@ -1,0 +1,169 @@
+// true if you want to activate the clock UI
+var clockUI = true
+// which loop do you want the clock to be activated?
+var loopClockStart = 2
+
+// Display the clock in the center of the screen
+// Adjust X and Y coordinates as needed to center based on your digit designs
+var startX = -25
+var posY = -8
+
+// Loop count
+var loopCount = 1
+?loc.loop
+  loopCount++
+
+var hour
+var min
+var hourTensArt
+var hourOnesArt
+var minTensArt
+var minOnesArt
+
+// Colon ASCII art
+var colonArt = ascii
+#####
+#:::#
+#:::#
+#####
+#####
+#:::#
+#:::#
+#####
+asciiend
+
+// Calculate positions based on ASCII art dimensions
+var colon1X = startX + 23 // After hour digits
+var minutesX = colon1X + 6 // After first colon
+
+var clockUIActivated = false
+? clockUI & loopCount >= loopClockStart
+  clockUIActivated = true
+  // Current time
+  hour = time.hour
+  min = time.minute
+  // Function calls to get ASCII art for each part of the time
+  hourKensArt = GetDigitArt(hour / 10)
+  hourOnesArt = GetDigitArt(hour % 10)
+  minTensArt = GetDigitArt(min / 10)
+  minOnesArt = GetDigitArt(min % 10)
+  // Display hour tens and ones
+  >c@startX@,@posY@,#rainbow,@hourKensArt@
+  >c@(startX+12)@,@posY@,#rainbow,@hourOnesArt@
+  // Display first colon
+  >c@colon1X@,@posY@,#rainbow,@colonArt@
+  // Display minute tens and ones
+  >c@minutesX@,@posY@,#rainbow,@minTensArt@
+  >c@(minutesX+12)@,@posY@,#rainbow,@minOnesArt@
+
+func GetDigitArt(digit)
+  ? digit = 0
+    return ascii
+##000000####
+#00####00###
+00######00##
+00######00##
+00######00##
+00######00##
+#00####00###
+##000000####
+asciiend
+  :? digit = 1
+    return ascii
+####11######
+###111######
+##1#11######
+####11######
+####11######
+####11######
+####11######
+1111111111##
+asciiend
+  :? digit = 2
+    return ascii
+##222222####
+22######22##
+22#####22###
+#####22#####
+###22#######
+##22########
+22##########
+2222222222##
+asciiend
+  :? digit = 3
+    return ascii
+#3333333####
+33######33##
+########33##
+##3333333###
+########33##
+########33##
+33######33##
+33333333####
+asciiend
+  :? digit = 4
+    return ascii
+44######44##
+44######44##
+44######44##
+4444444444##
+########44##
+########44##
+########44##
+########44##
+asciiend
+  :? digit = 5
+    return ascii
+5555555555##
+55##########
+55##########
+555555555###
+########55##
+########55##
+55######55##
+#55555555###
+asciiend
+  :? digit = 6
+    return ascii
+##6666666###
+#66#########
+66##########
+66666666####
+66######66##
+66######66##
+#66####66###
+##666666####
+asciiend
+  :? digit = 7
+    return ascii
+7777777777##
+#######77###
+######77####
+#####77#####
+####77######
+###77#######
+##77########
+#77#########
+asciiend
+  :? digit = 8
+    return ascii
+#88888888###
+88######88##
+88######88##
+#88888888###
+88######88##
+88######88##
+88######88##
+#88888888###
+asciiend
+  :? digit = 9
+    return ascii
+##999999####
+99######99##
+99######99##
+##99999999##
+########99##
+########99##
+99######99##
+#9999999####
+asciiend
