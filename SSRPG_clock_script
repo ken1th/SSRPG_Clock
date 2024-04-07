@@ -15,7 +15,7 @@ var loopCount = 1
 
 var hour
 var min
-var hourTensArt
+var hourKensArt
 var hourOnesArt
 var minTensArt
 var minOnesArt
